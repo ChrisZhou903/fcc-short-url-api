@@ -71,7 +71,7 @@ app.get('/:id', function(req, res){
       res.redirect(doc.original_url);
     } else {
       // nothing found, take 'em home
-      res.redirect(req.protocol + '://' + req.hostname);
+      res.redirect('/');
     }
   });
 });
