@@ -5,8 +5,9 @@ var Url = require('./url');
 var mongoose = require('mongoose');
 var path = require('path')
 var app = express();
-var dbUrl = 'mongodb://localhost:27017/short_url';
+var dbUrl = process.env.NODE_ENV !== 'production' ? 'mongodb://localhost:27017/short_url' : 'mongodb://admin:`123@ds035385.mlab.com:35385/short_url'
 var port = process.env.PORT || 8080
+
 
 // create a connection to our MongoDB
 mongoose.connect(dbUrl);
